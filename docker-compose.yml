@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo
+    restart: always
+    networks:
+      - shared-network
+    volumes:
+      - ./mongo-db:/var/lib/mongodb/data
+
+  backend:
+    container_name: todo_backend
+    restart: unless-stopped
+    image: todo-backend-prod
+    build:
+      context: backend
+      target: production
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+
+    networks:
+      - shared-network
+    depends_on:
+      - mongodb
+
+  frontend:
+    container_name: todo_frontend
+    restart: unless-stopped
+    image: todo-frontend-prod
+    build:
+      context: frontend
+      target: production
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - shared-network
+    depends_on:
+      - backend
+
+networks:
+  shared-network:

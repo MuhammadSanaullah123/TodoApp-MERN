@@ -68,11 +68,11 @@ const Home = () => {
   return (
     <div id="home">
       <div id="contentDiv">
-        <img
+       {/*  <img
           src="https://res.cloudinary.com/dmtcur7kt/image/upload/v1695063038/Muhammad1_qd7xgy.jpg"
           alt=""
-        />
-
+        /> */}
+<i className="fa-solid fa-user-secret"></i>
         <div
           id="dropdown"
           /*    onClick={() => {

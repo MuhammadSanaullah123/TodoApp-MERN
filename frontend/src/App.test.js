@@ -14,7 +14,7 @@ test("Should render completed Todo component", () => {
     text: "Game",
     completed: true,
     created_at: "2023-09-16T20:07:10.884+00:00",
-    completed_at: "2023-09-16T20:07:10.884+00:00",
+    completed_at: "2023-09-17T20:07:10.884+00:00",
   };
   render(<Todo task={task} />);
   const todoElement = screen.getByTestId("todo-1");

@@ -559,13 +559,18 @@
     justify-content: center;
     width: 300px;
 
-    img {
-      width: 60px;
-      height: 60px;
+    .fa-user-secret {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+       width: 60px;
+      height: 60px; 
+      font-size: 35px;
+      color: #786d59;
       border-radius: 50%;
       border: 3px solid #786d59;
       margin-bottom: 50px;
-      cursor: pointer;
+      cursor: pointer; 
     }
     #dropdown {
       display: flex;
